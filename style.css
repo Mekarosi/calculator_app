@@ -1,0 +1,19 @@
+.container {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 50px 50px 50px 50px;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "header header header header" 
+    "main main main main" 
+    "main main main main" 
+    "main main main main" 
+    "main main main main" 
+    "footer footer footer footer";
+  }
+  .item-header {
+    grid-area: header;
+  }
+  .item-footer {
+    grid-area: footer;
+  }
