@@ -1,3 +1,8 @@
+body {
+  font-size: 64px;
+  background-color: black;
+}
+
 .container {
   display: grid;
   justify-content: center;
@@ -9,24 +14,34 @@
     'main main main main'
     'main main main main'
     'main main main main'
-    'main main main main'
-    'footer footer footer footer';
+    'main main main main';
 }
 .item-header {
   grid-area: header;
+  grid-row-start: 1;
+  grid-row-end: 1;
+  background-color: black;
+  color: white;
+  text-align: right;
 }
-.item-footer {
-  grid-area: footer;
-}
+
 .btn {
-  background-color: green;
+  background-color: dimgray;
   border: none;
   color: rgb(209, 186, 186);
   padding: 20px;
   text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 12px;
   margin: 4px 2px;
   border-radius: 50%;
+}
+
+.silver {
+  background-color: silver;
+  color: black;
+}
+.orange {
+  background-color: orange;
+}
+button {
+  font-size: 26px;
 }
