@@ -85,6 +85,15 @@ button:hover {
 .calculator-keys {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-row-gap: 20px;
-  grid-column-gap: 20px;
+  grid-gap: 20px;
+  padding: 20px;
+}
+
+.equal-sign {
+  background-color: #2e86c0;
+  border-color: #337cac;
+  color: #fff;
+  height: 100%;
+  grid-row-start: 2;
+  grid-row-end: 6;
 }
