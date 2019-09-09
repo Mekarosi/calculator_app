@@ -1,62 +1,12 @@
-body {
-  font-size: 64px;
-  background-color: black;
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
 }
 
-.container {
-  display: grid;
-  justify-content: center;
-  grid-template-columns: 80px 80px 80px 80px;
-  grid-template-rows: 80px 80px;
-  grid-template-areas:
-    'header header header header'
-    'main main main main'
-    'main main main main'
-    'main main main main'
-    'main main main main'
-    'main main main main';
-  border: 1px solid #ccc;
-  width: 400px;
-  background-color: rgb(37, 25, 25);
-}
-
-.item-header {
-  grid-area: header;
-  grid-row-start: 1;
-  grid-row-end: 1;
-  color: white;
-  text-align: right;
-}
-
-.btn {
-  background-color: dimgray;
-  border: none;
-  color: rgb(209, 186, 186);
-  padding: 20px;
-  text-align: center;
-  margin: 4px 2px;
-  border-radius: 50%;
-}
-
-.silver {
-  background-color: silver;
-  color: black;
-}
-.orange {
-  background-color: orange;
-}
-button {
-  font-size: 26px;
-}
-
-.calculator-screen {
-  width: 100%;
-  font-size: 35px;
-  height: 60px;
-  border: none;
-  background-color: #252525;
-  color: #fff;
-  text-align: right;
-  padding-right: 20px;
-  padding-left: 10px;
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
 }
