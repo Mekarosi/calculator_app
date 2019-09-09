@@ -81,3 +81,10 @@ button:hover {
 .equal-sign:hover {
   background-color: #4e9ed4;
 }
+
+.calculator-keys {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-row-gap: 20px;
+  grid-column-gap: 20px;
+}
