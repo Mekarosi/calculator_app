@@ -6,9 +6,17 @@ const calculator = {
 };
 
 function inputDigit(digit) {
-  const { displayValue } = calculator;
-  // Overwrite `displayValue` if the current value is '0' otherwise append to it
-  calculator.displayValue = displayValue === '0' ? digit : displayValue + digit;
+  const { displayValue, waitingForSecondOperand } = calculator;
+
+  if (waitingForSecondOperand === true) {
+    calculator.displayValue = digit;
+    calculator.waitingForSecondOperand = false;
+  } else {
+    calculator.displayValue =
+      displayValue === '0' ? digit : displayValue + digit;
+  }
+
+  console.log(calculator);
 }
 
 function inputDecimal(dot) {
@@ -17,6 +25,19 @@ function inputDecimal(dot) {
     // Append the decimal point
     calculator.displayValue += dot;
   }
+}
+
+function handleOperator(nextOperator) {
+  const { firstOperand, displayValue, operator } = calculator;
+  const inputValue = parseFloat(displayValue);
+
+  if (firstOperand === null) {
+    calculator.firstOperand = inputValue;
+  }
+
+  calculator.waitingForSecondOperand = true;
+  calculator.operator = nextOperator;
+  console.log(calculator);
 }
 
 function updateDisplay() {
@@ -34,7 +55,8 @@ keys.addEventListener('click', event => {
   }
 
   if (target.classList.contains('operator')) {
-    console.log('operator', target.value);
+    handleOperator(target.value);
+    updateDisplay();
     return;
   }
 
