@@ -31,14 +31,31 @@ function handleOperator(nextOperator) {
   const { firstOperand, displayValue, operator } = calculator;
   const inputValue = parseFloat(displayValue);
 
-  if (firstOperand === null) {
+  if (firstOperand == null) {
     calculator.firstOperand = inputValue;
+  } else if (operator) {
+    const result = performCalculation[operator](firstOperand, inputValue);
+
+    calculator.displayValue = String(result);
+    calculator.firstOperand = result;
   }
 
   calculator.waitingForSecondOperand = true;
   calculator.operator = nextOperator;
   console.log(calculator);
 }
+
+const performCalculation = {
+  '/': (firstOperand, secondOperand) => firstOperand / secondOperand,
+
+  '*': (firstOperand, secondOperand) => firstOperand * secondOperand,
+
+  '+': (firstOperand, secondOperand) => firstOperand + secondOperand,
+
+  '-': (firstOperand, secondOperand) => firstOperand - secondOperand,
+
+  '=': (firstOperand, secondOperand) => secondOperand
+};
 
 function updateDisplay() {
   const display = document.querySelector('.calculator-screen');
