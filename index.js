@@ -31,6 +31,12 @@ function handleOperator(nextOperator) {
   const { firstOperand, displayValue, operator } = calculator;
   const inputValue = parseFloat(displayValue);
 
+  if (operator && calculator.waitingForSecondOperand) {
+    calculator.operator = nextOperator;
+    console.log(calculator);
+    return;
+  }
+
   if (firstOperand == null) {
     calculator.firstOperand = inputValue;
   } else if (operator) {
